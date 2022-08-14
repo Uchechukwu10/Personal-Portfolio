@@ -27,7 +27,7 @@ const Contact = () => {
         console.log("Uche");
         e.preventDefault();
         setButtonText("Sending...");
-        let response = await fetch("http://localhost:5000/contact", {
+        let response = await fetch("/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json;charset=utf-8",
