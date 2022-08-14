@@ -64,4 +64,4 @@ router.post("/contact", (req, res) => {
 });
 
 
-app.listen(5000, () => console.log("Server Running"));
+app.listen(process.env.PORT || 5000);
