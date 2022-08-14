@@ -4,8 +4,7 @@ import { Container, Row, Col, Nav, Tab } from "react-bootstrap";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
-import colorSharp2 from '../assets/img/color-sharp2.png';
-
+import colorSharp2 from "../assets/img/color-sharp2.png";
 
 const Projects = () => {
   const projects = [
@@ -55,7 +54,7 @@ const Projects = () => {
                 nisi ut aliquip ex ea commodo consequat.{" "}
               </p>
               <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                <Nav variant="pills" defaultActiveKey="/home">
+                <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                   <Nav.Item>
                     <Nav.Link eventKey="first">Frontend</Nav.Link>
                   </Nav.Item>
@@ -68,18 +67,28 @@ const Projects = () => {
                     <Row>
                         {projects.map((project, index) => {
                             return (
-                                <ProjectCard key={index} {...project}/>
-                        )
+                            <ProjectCard
+                                key={index}
+                                title={project.title}
+                                description={project.description}
+                                imgURL={project.imgURL}
+                            />
+                            );
                         })}
                     </Row>
                   </Tab.Pane>
                   <Tab.Pane eventKey="second">
                     <Row>
-                        {projects.map((project, index) => {
-                            return (
-                                <ProjectCard key={index} {...project}/>
-                        )
-                        })}
+                      {projects.map((project, index) => {
+                        return (
+                          <ProjectCard
+                            key={index}
+                            title={project.title}
+                            description={project.description}
+                            imgURL={project.imgURL}
+                          />
+                        );
+                      })}
                     </Row>
                   </Tab.Pane>
                 </Tab.Content>
@@ -87,7 +96,11 @@ const Projects = () => {
             </Col>
           </Row>
         </Container>
-        <img className='background-image-left' src={colorSharp2} alt='purple-gradient'/>
+        <img
+          className="background-image-left"
+          src={colorSharp2}
+          alt="purple-gradient"
+        />
       </section>
     </div>
   );
