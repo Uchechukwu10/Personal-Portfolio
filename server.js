@@ -19,7 +19,6 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-console.log("Uche");
 
 const contactEmail = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -45,6 +44,7 @@ router.post("/contact", (req, res) => {
   const email = req.body.email;
   const message = req.body.message;
   const phone = req.body.phone;
+  console.log(name);
   const mail = {
     from: `${name} <${email}>`,
     to: "uchaynwankwo@gmail.com",
