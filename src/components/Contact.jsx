@@ -24,6 +24,7 @@ const Contact = () => {
     }
 
     const handleSubmit = async (e) => {
+        console.log("Uche");
         e.preventDefault();
         setButtonText("Sending...");
         let response = await fetch("http://localhost:5000/contact", {
@@ -31,7 +32,7 @@ const Contact = () => {
             headers: {
                 "Content-Type": "application/json;charset=utf-8",
             },
-            body: JSON.stringify(formDetails),
+            body: JSON.stringify(formDetails)
         });
         setButtonText("Send");
         let result = await response.json();
@@ -53,7 +54,7 @@ const Contact = () => {
                     </Col>
                     <Col md={6}>
                         <h2>Get in touch</h2>
-                        <form onSubmit={handleSubmit()}>
+                        <form onSubmit={handleSubmit}>
                             <Row>
                                 <Col sm={6} className="px-1">
                                     <input type="text" value={formDetails.firstName} placeholder="First Name" onChange={(e) => onFormUpdate('firstName', e.target.value)}/>
