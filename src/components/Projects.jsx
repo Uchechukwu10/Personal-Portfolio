@@ -1,48 +1,65 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import { Container, Row, Col, Nav, Tab } from "react-bootstrap";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
+import keeper from "../assets/img/keeper.jpg";
+import trivia from "../assets/img/trivia-app.jpg";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 
 const Projects = () => {
-  const projects = [
+  const frontend = [
     {
-      title: "Trivia App",
+      title: "Keeper App",
       description:
-        "An app that displays trivia questions based on category and allows you play the trivia game",
-      imgURL: projImg1,
+        "This is a basic Frontend web app that allows a user to create notes",
+      imgURL: keeper,
+      stacks: ['ReactJS', 'NodeJS'],
+      liveSite: "https://keeper-app-bay.vercel.app/",
+      github: "https://github.com/Uchechukwu10/keeper-app"
     },
     {
       title: "Trivia App",
       description:
         "An app that displays trivia questions based on category and allows you play the trivia game",
-      imgURL: projImg2,
+      imgURL: trivia,
+      stacks: ['ReactJS', 'Flask', 'PostgreSQL'],
+      liveSite: "https://knowledge-banks.herokuapp.com/",
+      github: "https://github.com/Uchechukwu10/Trivia-game"
+    }
+  ];
+
+  const fullstack = [
+    {
+      title: "Keeper App",
+      description:
+        "This is a basic Frontend web app that allows a user to create notes",
+      imgURL: keeper,
+      stacks: ['ReactJS', 'NodeJS'],
+      liveSite: "https://keeper-app-bay.vercel.app/",
+      github: "https://github.com/Uchechukwu10/keeper-app"
     },
     {
       title: "Trivia App",
       description:
         "An app that displays trivia questions based on category and allows you play the trivia game",
-      imgURL: projImg3,
+      imgURL: trivia,
+      stacks: ['ReactJS', 'Flask', 'PostgreSQL'],
+      liveSite: "https://knowledge-banks.herokuapp.com/",
+      github: "https://github.com/Uchechukwu10/Trivia-game"
     },
     {
       title: "Trivia App",
       description:
         "An app that displays trivia questions based on category and allows you play the trivia game",
-      imgURL: projImg1,
-    },
-    {
-      title: "Trivia App",
-      description:
-        "An app that displays trivia questions based on category and allows you play the trivia game",
-      imgURL: projImg2,
-    },
+      imgURL: trivia,
+      stacks: ['ReactJS', 'Flask', 'PostgreSQL'],
+      liveSite: "https://keeper-app-bay.vercel.app/",
+      github: "https://github.com/Uchechukwu10/keeper-app"
+    }
   ];
 
   return (
     <div>
-      <section className="project" id="project">
+      <section className="project" id="projects">
         <Container>
           <Row>
             <Col>
@@ -65,13 +82,16 @@ const Projects = () => {
                 <Tab.Content>
                   <Tab.Pane eventKey="first">
                     <Row>
-                        {projects.map((project, index) => {
+                        {frontend.map((project, index) => {
                             return (
                             <ProjectCard
                                 key={index}
                                 title={project.title}
                                 description={project.description}
                                 imgURL={project.imgURL}
+                                stacks={project.stacks}
+                                liveSite={project.liveSite}
+                                github={project.github}
                             />
                             );
                         })}
@@ -79,13 +99,16 @@ const Projects = () => {
                   </Tab.Pane>
                   <Tab.Pane eventKey="second">
                     <Row>
-                      {projects.map((project, index) => {
+                      {fullstack.map((project, index) => {
                         return (
                           <ProjectCard
                             key={index}
                             title={project.title}
                             description={project.description}
                             imgURL={project.imgURL}
+                            stacks={project.stacks}
+                            liveSite={project.liveSite}
+                            github={project.github}
                           />
                         );
                       })}
