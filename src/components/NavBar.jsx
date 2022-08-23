@@ -46,11 +46,11 @@ const NavBar = () => {
             </Nav>
             <span className="navbar-text">
                 <div className='social-icon'>
-                    <a href="#" ><img src={navIcon1} alt='' /></a>
-                    <a href="#" ><img src={navIcon2} alt='' /></a>
-                    <a href="#" ><img src={navIcon3} alt='' /></a>
+                    <a href="https://www.linkedin.com/in/uchechukwu10" ><img src={navIcon1} alt='linkedin' /></a>
+                    <a href="https://www.facebook.com/profile.php?id=100076420238767" ><img src={navIcon2} alt='facebook' /></a>
+                    <a href="https://www.instagram.com/maazi_uchay/" ><img src={navIcon3} alt='instagram' /></a>
                 </div>
-                <button className="btn" onClick={() => console.log("Connect")}><span>Let's Connect</span></button>
+                <button className="btn" ><span><a href='#connect'>Let's Connect</a></span></button>
             </span>
             </Navbar.Collapse>
         </Container>
