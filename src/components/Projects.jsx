@@ -9,11 +9,21 @@ import fitness from "../assets/img/fitness.jpg";
 import secrets from "../assets/img/secrets.jpg";
 import jobify from "../assets/img/jobify.jpg";
 import debtors from "../assets/img/debtors.jpg";
+import musica from "../assets/img/musica.jpg";
 import fyyur from "../assets/img/fyyur.jpg";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 
 const Projects = () => {
   const allProjects = [
+    {
+      title: "Musica",
+      description:
+        "Musica is a music streaming front-end only web application that lets you play songs online. Just click and explore",
+      imgURL: musica,
+      stacks: ['ReactJS', 'TailwindCSS'],
+      liveSite: "https://musicabyuche.vercel.app/",
+      github: "https://github.com/Uchechukwu10/musica"
+    },
     {
       title: "Techie Genius",
       description:
@@ -105,12 +115,12 @@ const Projects = () => {
             <Col>
               <h2>Projects</h2>
               <p>
-                Here are a few projects I have worked on. They are grouped into Frontend and Fullstack projects.{" "}
+                Here are a few projects I have worked on.{" "}
               </p>
               <Tab.Container id="projects-tabs" defaultActiveKey="first">
                 <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                   <Nav.Item>
-                    <Nav.Link eventKey="first">Frontend</Nav.Link>
+                    <Nav.Link eventKey="first">Have fun exploring!</Nav.Link>
                   </Nav.Item>
                 </Nav>
                 <Tab.Content>
