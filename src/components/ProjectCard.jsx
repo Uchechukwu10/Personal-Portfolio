@@ -10,7 +10,7 @@ const ProjectCard = (props) => {
     <Col sm={6} md={4}>
     <TrackVisibility>
     {({ isVisible }) =>
-    <div className={isVisible ? 'animate__animated animate__pulse' : ''}>
+    <div className={isVisible ? '' : ''}>
       <div className="proj-imgbx">
         <img src={props.imgURL} alt="project-card" />
         <div className="proj-txtx">
