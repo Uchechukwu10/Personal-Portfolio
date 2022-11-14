@@ -1,4 +1,4 @@
-import { React, useState, useEffect} from 'react';
+import { React, useState, useEffect, useRef} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import headerImg from '../assets/img/header-img.svg';
@@ -6,13 +6,15 @@ import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
 const Banner = () => {
-    const [loopNum, setLoopNum] = useState(0);
+  const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = [ "Frontend Development", "Backend Development", "Responsive Design" ];
+  const toRotate = [ "Frontend Development", "Backend Development"];
   const period = 2000;
+
+  const banner = useRef();
 
     useEffect(() => {
         let ticker = setInterval(() => {
@@ -57,7 +59,8 @@ const Banner = () => {
                         {({ isVisible }) =>
                           <div className={isVisible ? 'animate__animated animate__tada' : ''}>
                             <span className='tagline'>Welcome to my Portfolio</span>
-                            <h1>{` Hi I'm Uche `}<span className='wrap'>{text}</span></h1>
+                            <h1><span>{` Hi I'm Uche `}</span></h1>
+                            <h1><span className='wrap'>{text}</span></h1>
                             <p>I am a Web Developer that builds substantial web applications, providing lasting technical solutions to existing problems. I build both Frontend and Fullstack applications. </p>
                             <button >Let's Connect <ArrowRightCircle size={25} /></button>
                           </div>}
