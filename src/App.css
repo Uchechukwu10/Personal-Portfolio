@@ -318,7 +318,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background: #151515;
   border-radius: 64px;
   text-align: center;
-  padding: 60px 50px;
+  padding: 60px 35px;
   margin-top: -60px;
 }
 .skill h2 {
@@ -336,8 +336,22 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 80%;
   margin: 0 auto;
   position: relative;
+  padding: 0 50px;
 }
-
+@media only screen and (max-width: 500px) {
+  .skill-slider {
+    width: 100%;
+  }
+  .skill-bx {
+    padding: 40px 20px;
+  }
+}
+.react-multiple-carousel__arrow--left {
+  left: -2px !important;
+}
+.react-multiple-carousel__arrow--right {
+  right: -2px !important;
+}
 .skill-slider .item img {
   width: 50%;
   margin: 0 auto 15px auto;
